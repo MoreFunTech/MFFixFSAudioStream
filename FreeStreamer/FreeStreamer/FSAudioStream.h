@@ -574,6 +574,9 @@ NSString*             freeStreamerReleaseVersion(void);
  * The property has the low-level stream configuration.
  */
 @property (readonly) FSStreamConfiguration *configuration;
+
+@property (nonatomic, assign) BOOL automaticAudioSessionHandlingEnabled;
+
 /**
  * Delegate.
  */

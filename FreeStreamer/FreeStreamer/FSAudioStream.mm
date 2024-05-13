@@ -1692,6 +1692,15 @@ public:
     return _private.configuration;
 }
 
+- (void)setAutomaticAudioSessionHandlingEnabled:(BOOL)automaticAudioSessionHandlingEnabled {
+    astreamer::Stream_Configuration *c = astreamer::Stream_Configuration::configuration();
+    c->automaticAudioSessionHandlingEnabled = automaticAudioSessionHandlingEnabled;
+}
+
+- (BOOL)automaticAudioSessionHandlingEnabled {
+    return _private.configuration.automaticAudioSessionHandlingEnabled;
+}
+
 - (void)setDelegate:(id<FSPCMAudioStreamDelegate>)delegate
 {
     NSAssert([NSThread isMainThread], @"FSAudioStream.setDelegate needs to be called in the main thread");
